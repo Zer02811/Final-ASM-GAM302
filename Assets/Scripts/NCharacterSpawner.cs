@@ -8,7 +8,7 @@ public class NCharacterSpawner : NetworkBehaviour
 
     public override void Spawned()
     {
-        NetworkObject characterObject = Runner.Spawn(characterPrefab);
+        NetworkObject characterObject = Runner.Spawn(characterPrefab, onBeforeSpawned: OnBeforeSpawnCharacter);
         
         cameraController.target = characterObject.transform;
     }
