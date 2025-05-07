@@ -43,7 +43,7 @@ public class PlayerInputHandler : MonoBehaviour, INetworkRunnerCallbacks // Impl
         // Lấy input từ Unity Input System (hoặc Input Manager cũ)
         data.direction.x = Input.GetAxis("Horizontal");
         data.direction.z = Input.GetAxis("Vertical");
-
+        data.jump = Input.GetButtonDown("Jump"); // <--- THÊM LẠI (Dùng GetButtonDown)
         data.shoot = Input.GetMouseButton(0); // Nút chuột trái
         input.Set(data);
     }
